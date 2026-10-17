@@ -1,24 +1,26 @@
 manifestVersion: 1.1
 id: useful-tools-grimmory
 name: Grimmory
-tagline: Manage and read your digital book collection
+tagline: Your self-hosted digital book library
 icon: https://raw.githubusercontent.com/grimmory-tools/grimmory/develop/assets/logo.svg
-category: files
+category: Media
 version: "1.0.0"
 port: 6060
 description: >-
   Self-hosted library management for ebooks, comics, and audiobooks.
-  Organize multiple libraries, manage metadata, read in your browser,
+  Organize your collection into separate libraries, read in your browser,
   and import new files through Bookdrop.
 developer: Grimmory
 website: https://grimmory.org
-submitter: Community
-submission: https://github.com/ricktapam/umbrel_usefultools
+submitter: Ricktapam
+submission: https://github.com/ricktapam/umbrel_grimmory
 repo: https://github.com/grimmory-tools/grimmory
 support: https://github.com/grimmory-tools/grimmory/issues
+gallery:
+  - https://grimmory.org/_astro/light.BTQDY56I_Zmtj9S.webp
+  - https://grimmory.org/_astro/dark.B2GYlzVA_1pKzze.webp
 releaseNotes: >-
-  Initial community package. Grimmory image is pinned to v3.5.0.
-  See the repository README for update instructions.
+  Initial personal Umbrel Community App Store package. Includes Grimmory and MariaDB.
 dependencies: []
 path: ""
 defaultUsername: ""
