@@ -1,0 +1,25 @@
+manifestVersion: 1.1
+id: useful-tools-grimmory
+name: Grimmory
+tagline: Manage and read your digital book collection
+icon: https://raw.githubusercontent.com/grimmory-tools/grimmory/develop/assets/logo.svg
+category: files
+version: "1.0.0"
+port: 6060
+description: >-
+  Self-hosted library management for ebooks, comics, and audiobooks.
+  Organize multiple libraries, manage metadata, read in your browser,
+  and import new files through Bookdrop.
+developer: Grimmory
+website: https://grimmory.org
+submitter: Community
+submission: https://github.com/ricktapam/umbrel_usefultools
+repo: https://github.com/grimmory-tools/grimmory
+support: https://github.com/grimmory-tools/grimmory/issues
+releaseNotes: >-
+  Initial community package. Grimmory image is pinned to v3.5.0.
+  See the repository README for update instructions.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

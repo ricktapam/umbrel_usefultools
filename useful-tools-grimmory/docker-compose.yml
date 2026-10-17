@@ -1,0 +1,51 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: useful-tools-grimmory_grimmory_1
+      APP_PORT: 6060
+
+  grimmory:
+    image: ghcr.io/grimmory-tools/grimmory:v3.5.0
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      USER_ID: "1000"
+      GROUP_ID: "1000"
+      TZ: "Europe/Stockholm"
+      DATABASE_URL: "jdbc:mariadb://mariadb:3306/grimmory"
+      DATABASE_USERNAME: "grimmory"
+      DATABASE_PASSWORD: "${APP_PASSWORD}"
+      SERVER_PORT: "6060"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    # Optional host port for Nginx Proxy Manager or another reverse proxy.
+    # Remove this mapping if you only need Umbrel's built-in app proxy.
+    # Do not expose this port through public router port-forwarding.
+    ports:
+      - "6061:6060"
+    volumes:
+      - ${APP_DATA_DIR}/data/app:/app/data
+      - ${APP_DATA_DIR}/data/books:/books
+      - ${APP_DATA_DIR}/data/bookdrop:/bookdrop
+
+  mariadb:
+    image: lscr.io/linuxserver/mariadb:11.4.8
+    restart: on-failure
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "Europe/Stockholm"
+      MYSQL_ROOT_PASSWORD: "${APP_SEED}"
+      MYSQL_DATABASE: "grimmory"
+      MYSQL_USER: "grimmory"
+      MYSQL_PASSWORD: "${APP_PASSWORD}"
+    volumes:
+      - ${APP_DATA_DIR}/data/mariadb:/config
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10

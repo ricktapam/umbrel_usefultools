@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: homelab-example-app_web_1
+      APP_PORT: 8080
+
+  web:
+    image: example/image:1.0.0
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data:/data

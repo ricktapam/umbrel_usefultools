@@ -1,0 +1,21 @@
+manifestVersion: 1.1
+id: homelab-example-app
+name: Example App
+tagline: Brief description
+icon: https://example.com/icon.svg
+category: utilities
+version: "1.0.0"
+port: 8080
+description: >-
+  Describe what the application does.
+developer: Upstream Project
+website: https://example.com
+submitter: Community
+submission: https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY
+repo: https://example.com/upstream-repository
+support: https://example.com/upstream-repository/issues
+releaseNotes: Initial community package.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
